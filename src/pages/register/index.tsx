@@ -6,11 +6,11 @@ const LoginPage = () => {
             <div className="h-full w-2/4 absolute left-0 bg-gray-200 px-36 flex justify-center items-center flex-col">
                 <div className="w-full">
                     <div className="text-gray-600 font-bold text-4xl">
-                        <p>Selamat datang</p>
-                        <p>Kembali di Ragnote</p>
+                        <p>Daftar</p>
+                        <p>Akun Ragnote</p>
                     </div>
                     <div className="mt-5 text-gray-600 font-medium text-base">
-                        <p>Belum punya akun? <span className="text-blue-500 underline underline-offset-1 cursor-pointer">Daftar, yuk!</span></p>
+                        <p>Sudah punya akun? <span className="text-blue-500 underline underline-offset-1 cursor-pointer">Masuk, yuk!</span></p>
                     </div>
                 </div>
                 <div className="mt-10 h-8 w-52 bg-red-600 rounded-full flex justify-center items-center cursor-pointer">
@@ -27,6 +27,11 @@ const LoginPage = () => {
                         type="password"
                         placeholder="************"
                         label="Password"
+                    />
+                    <InputForm
+                        type="password"
+                        placeholder="************"
+                        label="Confirmation Password"
                     />
                     <div className="mt-10 w-full flex items-center justify-center">
                         <button className="h-8 w-52 bg-emerald-600 rounded-full text-white font-medium text-sm">Masuk</button>
