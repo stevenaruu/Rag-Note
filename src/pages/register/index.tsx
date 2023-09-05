@@ -1,5 +1,7 @@
 import InputForm from "@/components/InputForm/InputForm"
 import Link from "next/link"
+import Image from 'next/image'
+import Cat from '../../assets/cat-with-books-2.png'
 
 const LoginPage = () => {
     return (
@@ -39,8 +41,15 @@ const LoginPage = () => {
                     </div>
                 </form>
             </div>
-            <div className="h-full w-2/4 absolute right-0 bg-emerald-600">
-
+            <div className="h-full w-2/4 absolute right-0 bg-emerald-600 flex justify-center items-end">
+                <Image
+                    src={Cat}
+                    alt="Cat"
+                    width={500}
+                    height={500}
+                    className="z-10"
+                />
+                <div className="w-3/5 absolute h-5/6 bg-black z-0 opacity-5 rounded-t-full" />
             </div>
         </div >
     )
