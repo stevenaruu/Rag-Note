@@ -1,4 +1,4 @@
-import InputForm from "@/components/InputForm/InputForm"
+import InputForm from "@/components/input_form/InputForm"
 import Link from "next/link"
 import Image from 'next/image'
 import Cat from '../../assets/cat-with-books-2.png'
