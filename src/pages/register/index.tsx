@@ -1,4 +1,5 @@
 import InputForm from "@/components/InputForm/InputForm"
+import Link from "next/link"
 
 const LoginPage = () => {
     return (
@@ -10,7 +11,7 @@ const LoginPage = () => {
                         <p>Akun Ragnote</p>
                     </div>
                     <div className="mt-5 text-gray-600 font-medium text-base">
-                        <p>Sudah punya akun? <span className="text-blue-500 underline underline-offset-1 cursor-pointer">Masuk, yuk!</span></p>
+                        <p>Sudah punya akun? <Link href="/login" className="text-blue-500 underline underline-offset-1 cursor-pointer">Masuk, yuk!</Link></p>
                     </div>
                 </div>
                 <div className="mt-10 h-8 w-52 bg-red-600 rounded-full flex justify-center items-center cursor-pointer">
