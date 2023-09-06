@@ -1,20 +1,25 @@
-import Note from '@/components/note/Note'
 import { Inter } from 'next/font/google'
-import Logo from '../assets/ragnote-logo.png'
-import Image from 'next/image'
-import Link from 'next/link'
-import Modal from '@/components/modal/Modal'
+import { useRouter } from 'next/router'
+import Note from '@/components/note/Note'
 import Sidebar from '@/components/sidebar/Sidebar'
+import Button from '@/components/button/Button'
+import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const { push } = useRouter()
+  const handleLogin = () => {
+    push('/login')
+  }
   return (
     <div>
       <Sidebar>
         <div className='fixed top-0 mt-5 w-2/6 px-5'>
           <div className='flex items-center justify-between gap-5'>
-            <Link href={"/login"} className="mt-2 h-8 w-52 bg-yellow-400 rounded-full text-white font-medium text-sm flex items-center justify-center">Login</Link>
+            <Button variant="bg-yellow-400 mt-2">
+              <Link href={"/login"}>Masuk</Link>
+            </Button>
             <input
               type="text"
               className="w-full mt-2 px-5 py-2 focus:outline-none rounded-lg text-gray-600 font-medium text-sm"

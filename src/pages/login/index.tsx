@@ -2,6 +2,7 @@ import InputForm from "@/components/input_form/InputForm"
 import Link from "next/link"
 import Image from 'next/image'
 import Cat from '../../assets/cat-with-books.png'
+import Button from "@/components/button/Button"
 
 const LoginPage = () => {
     return (
@@ -16,8 +17,8 @@ const LoginPage = () => {
                         <p>Belum punya akun? <Link href={"/register"} className="text-blue-500 underline underline-offset-1 cursor-pointer">Daftar, yuk!</Link></p>
                     </div>
                 </div>
-                <div className="mt-10 h-8 w-52 bg-red-600 rounded-full flex justify-center items-center cursor-pointer">
-                    <button className="text-white font-medium text-sm">Masuk dengan Google</button>
+                <div className="mt-10 h-8 w-52 flex justify-center items-center">
+                    <Button variant="bg-red-600">Masuk dengan Google</Button>
                 </div>
                 <hr className="mt-10 mb-10 bg-gray-300 h-1 w-full" />
                 <form action="" className="w-full">
@@ -32,7 +33,7 @@ const LoginPage = () => {
                         label="Password"
                     />
                     <div className="mt-10 w-full flex items-center justify-center">
-                        <button className="h-8 w-52 bg-emerald-600 rounded-full text-white font-medium text-sm">Masuk</button>
+                        <Button variant="bg-emerald-600">Masuk</Button>
                     </div>
                 </form>
             </div>
