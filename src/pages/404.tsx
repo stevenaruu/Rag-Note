@@ -1,3 +1,4 @@
+import Waves from '@/assets/Waves'
 import Sidebar from '@/components/sidebar/Sidebar'
 import Link from 'next/link'
 
@@ -5,7 +6,7 @@ const _404Page = () => {
     return (
         <div>
             <Sidebar>
-                {null}
+                <></>
             </Sidebar>
             <div className="h-full w-4/6 fixed top-0 overflow-x-hidden right-0 flex justify-center flex-col items-center bg-gray-200">
                 <div className="text-emerald-600">
@@ -15,6 +16,7 @@ const _404Page = () => {
                     </p>
                     <Link href={"/"} className="font-semibold mt-8 h-12 w-52 bg-emerald-600 rounded-xl text-white text-sm flex items-center justify-center">Back to Homepage</Link>
                 </div>
+                <Waves />
             </div>
         </div>
     )
