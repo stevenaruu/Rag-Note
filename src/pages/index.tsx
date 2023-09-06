@@ -4,6 +4,8 @@ import Note from '@/components/note/Note'
 import Sidebar from '@/components/sidebar/Sidebar'
 import Button from '@/components/button/Button'
 import Link from 'next/link'
+import { useEffect } from 'react'
+import axios from 'axios'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -12,6 +14,15 @@ export default function Home() {
   const handleLogin = () => {
     push('/login')
   }
+  useEffect(() => {
+    axios.get('api/notes')
+      .then((response) => {
+        console.log(response.data)
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
   return (
     <div>
       <Sidebar>
