@@ -14,7 +14,7 @@ const Sidebar = (props: ISidebar) => {
                 height={350}
                 className="z-10"
             />
-            <p className='text-7xl font-bold text-yellow-400'>Ragnote</p>
+            <p className=' font-bold text-yellow-400 text-5xl md:text-7xl'>Ragnote</p>
             <div className="w-4/5 absolute h-4/6 bg-black z-0 opacity-5 rounded-t-full bottom-0" />
         </div>
     )
