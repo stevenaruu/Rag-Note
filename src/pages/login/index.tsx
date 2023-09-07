@@ -3,6 +3,7 @@ import Link from "next/link"
 import Image from 'next/image'
 import Cat from '../../assets/cat-with-books.png'
 import Button from "@/components/button/Button"
+import Anchor from "@/components/Anchor/Anchor"
 
 const LoginPage = () => {
     return (
@@ -14,7 +15,14 @@ const LoginPage = () => {
                         <p>Kembali di Ragnote</p>
                     </div>
                     <div className="mt-5 text-gray-600 font-medium text-base">
-                        <p>Belum punya akun? <Link href={"/register"} className="text-blue-500 underline underline-offset-1 cursor-pointer">Daftar, yuk!</Link></p>
+                        <p>Belum punya akun?&nbsp;
+                            <Anchor
+                                variant="text-blue-500"
+                                href="/register"
+                            >
+                                Daftar, yuk!
+                            </Anchor>
+                        </p>
                     </div>
                 </div>
                 <div className="mt-10 h-8 w-52 flex justify-center items-center">
@@ -38,6 +46,14 @@ const LoginPage = () => {
                 </form>
             </div>
             <div className="h-full w-2/4 absolute right-0 bg-emerald-600 flex justify-center items-end">
+                <div className="absolute top-5 right-5">
+                    <Anchor
+                        variant="text-gray-600 font-semibold"
+                        href="/"
+                    >
+                        Kembali ke Homepage
+                    </Anchor>
+                </div>
                 <Image
                     src={Cat}
                     alt="Cat"
