@@ -13,21 +13,22 @@ import SkeletonNote from '@/components/skeleton_note/SkeletonNote'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function Home(props: { notes: INote[] }) {
+    const { notes } = props
     const { push } = useRouter()
-    const [notes, setNotes] = useState([])
+    // const [notes, setNotes] = useState([])
     const [searchValue, setSearchValue] = useState('')
 
-    useEffect(() => {
-        axios.get('api/notes')
-            .then((response) => {
-                setNotes(response.data.data);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-    }, []);
-    
+    // useEffect(() => {
+    //     axios.get('api/notes')
+    //         .then((response) => {
+    //             setNotes(response.data.data);
+    //         })
+    //         .catch((error) => {
+    //             console.log(error);
+    //         });
+    // }, []);
+
     const handleLogin = () => {
         push('/login')
     }
@@ -75,4 +76,15 @@ export default function Home() {
             </div>
         </div >
     )
+}
+
+export async function getServerSideProps() {
+    const res = await fetch("http://localhost:3000/api/notes")
+    const response = await res.json()
+
+    return {
+        props: {
+            notes: response.data
+        }
+    }
 }
