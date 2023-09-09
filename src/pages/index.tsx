@@ -16,18 +16,28 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
     const { push } = useRouter()
     const [notes, setNotes] = useState([])
-    const handleLogin = () => {
-        push('/login')
-    }
+    const [searchValue, setSearchValue] = useState('')
+
     useEffect(() => {
         axios.get('api/notes')
             .then((response) => {
-                setNotes(response.data.data)
+                setNotes(response.data.data);
             })
             .catch((error) => {
                 console.log(error);
             });
     }, []);
+    
+    const handleLogin = () => {
+        push('/login')
+    }
+
+    const handleSearch = (e:  React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value;
+        setSearchValue(value)
+    }
+    const filteredNotes = notes.filter((note: INote) => note.title.toLowerCase().includes(searchValue.toLowerCase()))
+    
     return (
         <div>
             <Sidebar>
@@ -40,13 +50,14 @@ export default function Home() {
                             type="text"
                             className="w-full mt-2 px-5 py-2 focus:outline-none rounded-lg text-gray-600 font-medium text-sm"
                             placeholder='Search...'
+                            onChange={handleSearch}
                         />
                     </div>
                 </div>
             </Sidebar>
             <div className="h-full w-4/6 fixed top-0 overflow-x-hidden right-0 bg-gray-200 p-5 items-center justify-center flex flex-wrap gap-5">
                 {notes.length > 0 ? (
-                    notes.map((note: INote) => (
+                    filteredNotes.map((note: INote) => (
                         <Note
                             key={note.id}
                             id={note.id}
