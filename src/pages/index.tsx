@@ -79,7 +79,7 @@ export default function Home(props: { notes: INote[] }) {
 }
 
 export async function getServerSideProps() {
-    const res = await fetch("http://localhost:3000/api/notes")
+    const res = await fetch(`${process.env.PUBLIC_API_URL}/api/notes`)
     const response = await res.json()
 
     return {
